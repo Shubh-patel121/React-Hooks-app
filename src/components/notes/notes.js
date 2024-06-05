@@ -1,4 +1,7 @@
 /*  
+
+NOTE:- Below notes are just for my revision purpose, it contains syntex errors and incomplete implementation
+
 1. useState.
 2.useEffect.
 3.useReducer.
@@ -48,7 +51,7 @@
     6. useContext - this is used with context api;
           context api - feature which is used to share data to child component without passing it through prop;
           now context is created by  myContext = react.createContext() ;
-          contextProvider component wraps the child components
+          contextProvider component wraps the child components & in provider component we have value prop in which we pass the value of the context.
           inside child components we consume this provided context by 
 
       7.useRef - in uncontrolled component, get tha value of the input or element current state we use this hook
@@ -59,4 +62,51 @@
 
       then attach with <element ref={inputRef}/>
    
+*/
+
+/* 
+    # Debouncing:-  to limit the rate at which a function is invoked;
+
+    function debounce( fn, wait){
+        let timeout;
+
+        return function(...arg){
+            claearTimeout(timeout);
+            timeout = setTimeout((..arg)=>{ fn.apply(this,arg)}, wait);
+        }
+
+    }
+
+    #Throtalling :- it ensures that function will be invoked only once in given time interval ;
+              
+             function throttle(fn, limit) {
+                      let inThrottle = false;
+
+                       return function(...args) {
+                         if (!inThrottle) {
+                           fn.apply(this, args);
+                           inThrottle = true;
+                           setTimeout(() => inThrottle = false, limit);
+                         }
+                       };
+                     }
+
+     # memomization :- to improve the performance of a function.
+     
+              function memomization(fn){
+                 
+                let cache = {};
+
+                return function(...arg){
+                     let key = JSON.Stringify(...arg);
+                     if(cache[key]]){
+                        return cache[key]
+                     }
+
+                     let result = fn(arg);
+                     cache[key] = result ;
+                     return result ;
+                }
+              }
+
 */
