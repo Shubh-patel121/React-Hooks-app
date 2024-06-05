@@ -10,7 +10,7 @@ const Focus = () => {
     */
     const inputRef = useRef(null);
     const handleClick = () =>{
-          inputRef.current.focus() ;
+          inputRef.current.showPicker() ;
     }
     return (
         <div
@@ -34,11 +34,11 @@ const Focus = () => {
           <input
             ref={inputRef}
             style={{ height: "20px", marginRight:"30px" }}
-            type="text"
+            type="date"
             placeholder="you can't enter, just see focus"
           />
           <button onClick={handleClick}>
-           Click me to Focus the input
+           Click me to open date dialog
         </button>
         </div>
       </div>
